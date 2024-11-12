@@ -13,3 +13,7 @@ include(CTest)
 
 # find Catch2 - if configured Conan2 will be used as dependency provider
 find_package(Catch2 REQUIRED)
+
+if(Catch2_FOUND AND BUILD_TESTING)
+        add_subdirectory(test)
+endif()
