@@ -8,6 +8,11 @@ project(CMakeConanCatchTemplate
 # Export compile commands for use with clangd
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+# An example library to be used in the test - this could be a library you are developing
+add_library(example_lib STATIC src/example.cpp)
+target_include_directories(example_lib PUBLIC include)
+target_compile_features(example_lib PUBLIC cxx_std_17)
+
 # Enable testing
 include(CTest)
 
